@@ -4,11 +4,11 @@ var nav = document.getElementById("main-navigation-wrapper");
 var header = document.getElementById("site-header");
 
 window.addEventListener("scroll", function() {
-    scrollpos = window.scrollY;
+	scrollpos = window.scrollY;
 
-    if (scrollpos > (header.offsetHeight - nav.offsetHeight)) {
-        nav.classList.add(stickyClass);
-    } else {
-        nav.classList.remove(stickyClass);
-    }
+	if (scrollpos > (header.offsetHeight - nav.offsetHeight)) {
+		nav.classList.add(stickyClass);
+	} else {
+		nav.classList.remove(stickyClass);
+	}
 });
