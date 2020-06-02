@@ -1,5 +1,5 @@
-WordPress Theme for www.stephensabatini.com.
-Copyright (C) 2018  Stephen Patrick Sabatini
+WP Boilerplate.
+Copyright (C) 2020 Stephen Patrick Sabatini
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
