@@ -1,0 +1,23 @@
+@mixin mobile-only {
+	@media (max-width: $mq-mobile-max) {
+		@content;
+	}
+}
+
+@mixin tablet-up {
+	@media (min-width: $mq-tablet-min) {
+		@content;
+	}
+}
+
+@mixin tablet-only {
+	@media (min-width: $mq-tablet-min) and (max-width: $mq-tablet-tablet-max) {
+		@content;
+	}
+}
+
+@mixin desktop-up {
+	@media (min-width: $mq-desktop-min) {
+		@content;
+	}
+}
