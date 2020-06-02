@@ -1,0 +1,73 @@
+// Font
+$font-family-serif: Georgia, serif;
+$font-family-sans-serif: Arial, Helvetica, sans-serif;
+$font-family-monospace: "Lucida Console", Monaco, monospace;
+$font-size: 16px;
+$font-size-print: 12pt;
+
+// Color (primary, secondary, tertiary, quaternary, etc.)
+$color-adjustment: 50%;
+$color-primary: #126581;
+$color-primary-accent-light: desaturate($color-primary, $color-adjustment);
+$color-primary-accent-dark: darken($color-primary, $color-adjustment);
+$color-secondary: #f68a1f;
+$color-secondary-accent-light: desaturate($color-secondary, $color-adjustment);
+$color-secondary-accent-dark: darken($color-secondary, $color-adjustment);
+$color-white: #fff;
+$color-black: #000;
+
+// Media Query (mobile first)
+$mq-mobile-max: 768px;
+$mq-tablet-min: $mq-mobile-max + 1px;
+$mq-tablet-tablet-max: 1200px;
+$mq-desktop-min: $mq-tablet-tablet-max + 1px;
+
+// White Space (used for margin and padding)
+$ws-xs: 0.25rem; // 4px
+$ws-sm: 0.5rem; // 8px
+$ws-md: 1rem; // 16px
+$ws-lg: 2rem; // 32px
+$ws-xl: 4rem; // 64px
+
+// Margin (based on white space)
+$margin-xs: $ws-xs;
+$margin-sm: $ws-sm;
+$margin-md: $ws-md;
+$margin-lg: $ws-lg;
+$margin-xl: $ws-xl;
+
+// Padding (based on white space)
+$padding-xs: $ws-xs;
+$padding-sm: $ws-sm;
+$padding-md: $ws-md;
+$padding-lg: $ws-lg;
+$padding-xl: $ws-xl;
+
+// Line (used for border and outline)
+$line-width-thin: 0.0625rem; // 1px
+$line-width-medium: 0.125rem; // 2px
+$line-width-thick: 0.25rem; // 4px
+
+// Border (based on line)
+$border-width-thin: $line-width-thin;
+$border-width-medium: $line-width-medium;
+$border-width-thick: $line-width-thick;
+
+// Outline (based on line)
+$outline-width-thin: $line-width-thin;
+$outline-width-medium: $line-width-medium;
+$outline-width-thick: $line-width-thick;
+
+// Transition
+$transition-delay: 0.0625s;
+$transition-duration: 0.25s;
+$transition-timing: ease;
+
+// Transform
+$transform-scale: 1.03125;
+
+// Box Shadow
+$box-shadow: 0 $ws-xs $ws-xl rgba($color-black, 0.125);
+
+// Text Shadow
+$text-shadow: 0.125rem 0.125rem 0.25rem rgba($color-black, 0.125);
