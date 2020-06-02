@@ -1,0 +1,127 @@
+.commentlist {
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0;
+	text-indent: 0;
+	li {
+		&.alt {}
+		&.bypostauthor {}
+		&.byuser {}
+		&.comment-author-admin {}
+		&.comment {
+			margin: 1em 0;
+			&.depth-1 > .comment-body {}
+			.comment-body {
+				margin-bottom: 0;
+			}
+			.comment-meta {
+				a {
+					color: #ccc;
+				}
+			}
+			.comment-metadata {
+				font-size: 0.75rem;
+			}
+			div {
+				&.comment-author {}
+				&.vcard {
+					cite.fn {
+						font-style: normal;
+						a.url {}
+					}
+					img {
+						&.avatar {
+							border: 5px solid #ccc;
+							border-radius: 50%;
+							float: right;
+							margin: 0 0 1em 1em;
+							&-32 {}
+						}
+						&.photo {}
+					}
+					span.says {}
+				}
+				&.reply {
+					a {
+						font-weight: 700;
+					}
+				}
+			}
+			p {
+				margin: 0 0 1em;
+			}
+			ul, ol {
+				list-style: square;
+				margin: 0 0 1em 2em;
+			}
+			.children {
+				list-style: none;
+				margin: 1em 0 0;
+				text-indent: 0;
+				li {
+					&.alt {}
+					&.bypostauthor {}
+					&.byuser {}
+					&.comment {}
+					&.comment-author-admin {}
+					&.depth {
+						&-2 {}
+					}
+					&.odd {}
+				}
+			}
+		}
+		&.even {}
+		&.odd {}
+		&.parent {}
+		&.thread {
+			&-alt {}
+			&-even {}
+			&-odd {}
+		}
+	}
+}
+
+.comment-respond {
+	background-color: #fff;
+	border-radius: 3rem;
+	box-shadow: $box-shadow;
+	padding: 2rem;
+	label {
+		display: block;
+	}
+	.comment-form-cookies-consent label {
+		display: inline;
+	}
+	input:not([type="checkbox"]),
+	select,
+	textarea {
+		background: #f0f0f0;
+		border-color: transparent;
+		border-style: none;
+		border-radius: 3rem;
+		padding: 1rem;
+		width: 100%;
+	}
+	input:not([type="checkbox"]),
+	select,
+	textarea {
+		&:active,
+		&:focus,
+		&:hover {}
+	}
+	.form-submit {
+		.submit {
+			background-color: #fff;
+			background-color: hsla(0, 0%, 100%, 0.0625);
+			border: 0.25rem solid #333;
+			border-radius: 3rem;
+			font-weight: 700;
+			margin: 0;
+			transition: .2s ease-in-out;
+			&:active,
+			&:focus,
+			&:hover {}
+		}
+	}
+}
