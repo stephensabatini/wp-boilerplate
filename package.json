@@ -29,6 +29,9 @@
 		"imagemin-svgo": "^8.0.0",
 		"node-sass": "^4.14.1"
 	},
+	"dependencies": {
+		"normalize.css": "^8.0.1"
+	},
 	"scripts": {
 		"start": "gulp",
 		"build": "gulp compile"
@@ -36,6 +39,5 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/stephensabatini/wp-boilerplate.git"
-	},
-	"dependencies": {}
+	}
 }
