@@ -14,91 +14,89 @@ const cleanCSS = require('gulp-clean-css');
 
 // By default, gulp-load-plugins only detects dependencies prefixed with gulp-.
 var plugins = require('gulp-load-plugins')({
-  pattern: [
-    'gulp.*',
-    'gulp-*',
-    'gulp-*-*',
-    'autoprefixer',
-    'del',
-    'lost',
-    'rename'
-  ]
+	pattern: [
+		'gulp.*',
+		'gulp-*',
+		'gulp-*-*',
+		'autoprefixer',
+		'del',
+		'lost',
+		'rename'
+	]
 });
 
 // Where we get our source files from that we're going to compile.
 var srcPaths = {
-  scss: 'src/scss/',
-  js: 'src/js/',
-  images: 'src/images/'
+	scss: 'src/scss/',
+	js: 'src/js/',
+	images: 'src/images/'
 }
 var srcFiles = {
-  scss: [
-    srcPaths.scss + '*.scss',
-    srcPaths.scss + '**/*.scss'
-  ],
-  js: [
-    srcPaths.js + '*.js',
-    srcPaths.js + '**/*.js'
-  ],
-  images: [
-    // These are the only image file extensions imagemin supports.
-    srcPaths.images + '*.svg',
-    srcPaths.images + '*.png',
-    srcPaths.images + '*.jpg',
-    srcPaths.images + '*.jpeg',
-    srcPaths.images + '*.gif',
-    srcPaths.images + '**/*.svg',
-    srcPaths.images + '**/*.png',
-    srcPaths.images + '**/*.jpg',
-    srcPaths.images + '**/*.jpeg',
-    srcPaths.images + '**/*.gif'
-  ]
+	scss: [
+		srcPaths.scss + '*.scss',
+		srcPaths.scss + '**/*.scss'
+	],
+	js: [
+		srcPaths.js + '*.js',
+		srcPaths.js + '**/*.js'
+	],
+	images: [
+		// These are the only image file extensions imagemin supports.
+		srcPaths.images + '*.png',
+		srcPaths.images + '*.jpg',
+		srcPaths.images + '*.jpeg',
+		srcPaths.images + '*.gif',
+		srcPaths.images + '**/*.png',
+		srcPaths.images + '**/*.jpg',
+		srcPaths.images + '**/*.jpeg',
+		srcPaths.images + '**/*.gif'
+	]
 };
 
 // Where our files are output after being compiled.
 var destPaths = {
-  css: 'dist/css/',
-  js: 'dist/js/',
-  images: 'dist/images/'
+	css: 'dist/css/',
+	js: 'dist/js/',
+	images: 'dist/images/'
 };
 var outputFile = {
-  uncompressed: {
-    css: 'index.css',
-    js: 'index.js',
-  },
-  compressed: {
-    css: 'index.min.css',
-    js: 'index.min.js',
-  }
+	uncompressed: {
+		css: 'index.css',
+		js: 'index.js',
+	},
+	compressed: {
+		css: 'index.min.css',
+		js: 'index.min.js',
+	}
 };
 
 // Define all of the tasks.
 gulp.task('clean', () => {
-  return cleanTask();
+	return cleanTask();
 });
 
 gulp.task('sass', () => {
-  return sassTask();
+	return sassTask();
 });
 
 gulp.task('js', () => {
-  return jsTask();
+	return jsTask();
 });
 
 gulp.task('images', () => {
-  return imagesTask();
+	return imagesTask();
 });
 
 gulp.task('watch:sass', () => {
-  return watchSassTask();
+	return watchSassTask();
 });
 
 gulp.task('watch:js', () => {
-  return watchJsTask();
+	return watchJsTask();
 });
 
 gulp.task('watch:images', () => {
-  return watchImagesTask();
+	return watchImagesTask();
 });
 
 /**
@@ -116,133 +114,146 @@ gulp.task('default', gulp.parallel('compile', 'watch'));
  * scalability.
  */
 function cleanTask() {
-  return plugins.del([
-    destPaths.css + outputFile.css,
-    destPaths.js + outputFile.js,
-    destPaths.images
-  ]);
+	return plugins.del([
+		destPaths.css + outputFile.css,
+		destPaths.js + outputFile.js,
+		destPaths.images
+	]);
 }
 
 function sassTask() {
-  return gulp.src(srcFiles.scss)
+	return gulp.src(srcFiles.scss)
 
-    // Error handling
-    .pipe(plugins.sass().on('error', plugins.sass.logError))
+		// Error handling
+		.pipe(plugins.sass().on('error', plugins.sass.logError))
 
-    // Combine all of our CSS files into one to cut down on HTTP requests.
-    .pipe(plugins.concat(outputFile.uncompressed.css))
+		// Combine all of our CSS files into one to cut down on HTTP requests.
+		.pipe(plugins.concat(outputFile.uncompressed.css))
 
-    /**
-     * Especially useful for when you're extracting font sizes
-     * from design files. (e.g. Photoshop, Sketch, etc.)
-     */
-    .pipe(plugins.pxtorem({
-      propList: [
-        'font-size',
-        'margin',
-        'padding',
-        'letter-spacing'
-      ],
-      // Setting this to false outputs both in the order: px, rem.
-      replace: true
-    }))
+		/**
+		 * Especially useful for when you're extracting font sizes
+		 * from design files. (e.g. Photoshop, Sketch, etc.)
+		 */
+		.pipe(plugins.pxtorem({
+			propList: [
+				'font-size',
+				'margin',
+				'padding',
+				'letter-spacing'
+			],
+			// Setting this to false outputs both in the order: px, rem.
+			replace: true
+		}))
 
-    /**
-     * Automatically add CSS browser prefixes.
-     *
-     * Note: Microsoft has dropped all support for anything before
-     * Windows 7. We should advise anyone on Windows 7 with IE 8-10
-     * to update their browser and anyone on an operating system
-     * before Windows 7 to update their operating system. We should
-     * also advise anyone on Windows 8 to upgrade to Windows 8.1.
-     *
-     * @link https://www.directionsonmicrosoft.com/roadmap/2013/09/supported-internet-explorer-versions-windows-os
-     * @link https://make.wordpress.org/core/handbook/best-practices/browser-support/
-     */
-    .pipe(plugins.autoprefixer())
+		/**
+		 * Automatically add CSS browser prefixes.
+		 *
+		 * Note: Microsoft has dropped all support for anything before
+		 * Windows 7. We should advise anyone on Windows 7 with IE 8-10
+		 * to update their browser and anyone on an operating system
+		 * before Windows 7 to update their operating system. We should
+		 * also advise anyone on Windows 8 to upgrade to Windows 8.1.
+		 *
+		 * @link https://www.directionsonmicrosoft.com/roadmap/2013/09/supported-internet-explorer-versions-windows-os
+		 * @link https://make.wordpress.org/core/handbook/best-practices/browser-support/
+		 */
+		.pipe(plugins.autoprefixer())
 
-    /**
-     * Add the required header comment in the style.css file for WordPress
-     * from the package.json file.
-     */
+		/**
+		 * Add the required header comment in the style.css file for WordPress
+		 * from the package.json file.
+		 */
 
-    //.pipe(doiuse({ browsers: ['ie >= 11', '> 1%', 'last 2 versions'], ignore: ['rem'] }))
+		//.pipe(doiuse({ browsers: ['ie >= 11', '> 1%', 'last 2 versions'], ignore: ['rem'] }))
 
-    // Output the compiled files.
-    .pipe(gulp.dest(destPaths.css))
+		// Output the compiled files.
+		.pipe(gulp.dest(destPaths.css))
 
-    // Create a minified (*.min.css) verison of the file.
-    .pipe(plugins.concat(outputFile.compressed.css))
+		// Create a minified (*.min.css) verison of the file.
+		.pipe(plugins.concat(outputFile.compressed.css))
 
-    // Minify CSS.
-    .pipe(cleanCSS())
+		// Minify CSS.
+		.pipe(cleanCSS())
 
-    // Output the compiled files.
-    .pipe(gulp.dest(destPaths.css))
+		// Output the compiled files.
+		.pipe(gulp.dest(destPaths.css))
 
-  // Sync with open browser window.
-  //.pipe(plugins.browserSync.stream());
+		// Sync with open browser window.
+		//.pipe(plugins.browserSync.stream());
 }
 
 function jsTask() {
-  return gulp.src(srcFiles.js)
+	return gulp.src(srcFiles.js)
 
-    // Combine all of our JS files into one to cut down on HTTP requests.
-    .pipe(plugins.concat(outputFile.uncompressed.js))
+		// Combine all of our JS files into one to cut down on HTTP requests.
+		.pipe(plugins.concat(outputFile.uncompressed.js))
 
-    // Output the compiled files to the uncompressed file.
-    .pipe(gulp.dest(destPaths.js))
+		// Output the compiled files to the uncompressed file.
+		.pipe(gulp.dest(destPaths.js))
 
-    // Create a minified (*.min.js) verison of the file.
-    .pipe(plugins.concat(outputFile.compressed.js))
+		// Create a minified (*.min.js) verison of the file.
+		.pipe(plugins.concat(outputFile.compressed.js))
 
-    // Minify JS.
-    .pipe(plugins.uglify())
+		// Minify JS.
+		.pipe(plugins.uglify())
 
-    // Output the compiled files.
-    .pipe(gulp.dest(destPaths.js))
+		// Output the compiled files.
+		.pipe(gulp.dest(destPaths.js))
 
-  // Sync with open browser window.
-  //.pipe(plugins.browserSync.stream());
+		// Sync with open browser window.
+		//.pipe(plugins.browserSync.stream());
 }
 
 function imagesTask() {
-  return gulp.src(srcFiles.images)
+	return gulp.src(srcFiles.images)
 
-    // Only optimize new images, not ones that have already been optimized.
-    .pipe(plugins.newer(destPaths.images))
+		// Only optimize new images, not ones that have already been optimized.
+		.pipe(plugins.newer(destPaths.images))
 
-    // Minify GIF, PNG, JPEG, and SVG files.
-    .pipe(plugins.imagemin([
-      plugins.imagemin.svgo({
-        plugins: [
-          { removeUselessDefs: true },
-          { cleanupIDs: false}
-        ]
-      }),
-      plugins.imagemin.gifsicle(),
-      /*plugins.imagemin.jpegtran(),*/
-      plugins.imagemin.optipng()
-    ]))
+		// Minify GIF, JPEG, PNG, and SVG files.
+		.pipe(
+			plugins.imagemin([
+				plugins.imagemin.svgo({
+					plugins: [
+						{
+							cleanupIDs: false
+						}
+					]
+				}),/*
+				// TODO: Isn't working currently. Has depency issue. Look into new option.
+				plugins.imagemin.gifsicle({
+					interlaced: false,
+					optimizationLevel: 1,
+					colors: 256
+				}),*/
+				plugins.imagemin.optipng({
+					optimizationLevel: 7
+				}),
+				plugins.imagemin.mozjpeg({
+					quality: 90,
+					progressive: true
+				}),
+			])
+		)
 
-    // Output the compiled files.
-    .pipe(gulp.dest(destPaths.images));
+		// Output the compiled files.
+		.pipe(gulp.dest(destPaths.images));
 }
 
 function watchSassTask() {
-  return gulp.watch(srcFiles.scss, () => {
-    return sassTask();
-  });
+	return gulp.watch(srcFiles.scss, () => {
+		return sassTask();
+	});
 }
 
 function watchJsTask() {
-  return gulp.watch(srcFiles.js, () => {
-    return jsTask();
-  });
+	return gulp.watch(srcFiles.js, () => {
+		return jsTask();
+	});
 }
 
 function watchImagesTask() {
-  return gulp.watch(srcFiles.images, () => {
-    return imagesTask();
-  });
+	return gulp.watch(srcFiles.images, () => {
+		return imagesTask();
+	});
 }
