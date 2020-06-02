@@ -3,6 +3,7 @@ dist
 vendor
 composer.phar
 package-lock.json
+yarn.lock
 *.log
 
 
