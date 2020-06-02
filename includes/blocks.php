@@ -41,7 +41,7 @@ function blocks_scripts() {
  * @return void
  */
 function blocks_editor_scripts() {
-	wp_enqueue_script( 'blocks-editor', BOILERPLATE_TEMPLATE_URL . '/includes/blocks/js/blocks-editor.js', [ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ], BOILERPLATE_VERSION, false );
+	wp_enqueue_script( 'blocks-editor', BOILERPLATE_TEMPLATE_URL . '/partials/blocks/js/blocks-editor.js', [ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ], BOILERPLATE_VERSION, false );
 	wp_enqueue_style( 'editor-style', BOILERPLATE_TEMPLATE_URL . '/dist/css/editor-style.css', [], BOILERPLATE_VERSION );
 }
 
