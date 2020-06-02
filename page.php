@@ -14,17 +14,17 @@
 get_header();
 
 if ( have_posts() ) {
-    while ( have_posts() ) {
-        the_post();
-        get_template_part( 'partials/page/content', 'page' );
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'partials/page/content', 'page' );
 
-        // If comments are open or we have at least one comment, load up the comment template.
-        if ( comments_open() || get_comments_number() )  {
-            comments_template();
-        }
-    }
+		// If comments are open or we have at least one comment, load up the comment template.
+		if ( comments_open() || get_comments_number() )  {
+			comments_template();
+		}
+	}
 } else {
-    get_template_part( 'partials/post/content', 'none' );
+	get_template_part( 'partials/post/content', 'none' );
 }
 
 get_sidebar();

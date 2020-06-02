@@ -15,22 +15,22 @@
 get_header();
 
 if ( function_exists('yoast_breadcrumb') ) {
-    yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">','</p>' );
+	yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">','</p>' );
 }
 
 if (  is_archive() ) {
-    the_archive_title( '<h1 class="archive-title">', '</h1>' );
-    echo '<p class="archive-description">'. term_description() . '</p>';
+	the_archive_title( '<h1 class="archive-title">', '</h1>' );
+	echo '<p class="archive-description">'. term_description() . '</p>';
 }
 
 if ( have_posts() ) {
-    while ( have_posts() ) {
-        the_post();
-        get_template_part( 'partials/post/excerpt/content', get_post_format() );
-    }
-    the_posts_pagination();
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'partials/post/excerpt/content', get_post_format() );
+	}
+	the_posts_pagination();
 } else {
-    get_template_part( 'partials/post/excerpt/content', 'none' );
+	get_template_part( 'partials/post/excerpt/content', 'none' );
 }
 
 get_sidebar();

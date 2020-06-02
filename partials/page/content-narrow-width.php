@@ -10,13 +10,13 @@
  */
 ?>
 <main id="main-wrapper" class="site-main-wrapper" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-    <article id="post-<?php echo $post->ID; ?>" <?php post_class( 'site-main' ); ?>>
-        <?php
-        the_content();
-        wp_link_pages( array(
-            'before' => '<div class="page-links">' . __( 'Pages:', BOILERPLATE_TEXT_DOMAIN ),
-            'after'  => '</div>',
-        ) );
-        ?>
-    </article>
+	<article id="post-<?php echo $post->ID; ?>" <?php post_class( 'site-main' ); ?>>
+		<?php
+		the_content();
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . __( 'Pages:', BOILERPLATE_TEXT_DOMAIN ),
+			'after'  => '</div>',
+		) );
+		?>
+	</article>
 </main>
