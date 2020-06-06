@@ -18,19 +18,26 @@
 			?>
 		</header>
 		<div class="entry-content">
-			<h2><?php _e( 'Author(s):', BOILERPLATE_TEXT_DOMAIN ); ?></h2>
+			<h2><?php _e( 'Author(s):', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-authors">
 				<?php wp_list_authors( 'exclude_admin=1&optioncount=1' ); ?>
 			</ul>
-			<h2><?php _e( 'Pages:', BOILERPLATE_TEXT_DOMAIN ); ?></h2>
+			<h2><?php _e( 'Pages:', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-pages">
-				<?php wp_list_pages( array( 'exclude' => '', 'title_li' => '' ) ); // Exclude pages by ID ?>
+				<?php
+				wp_list_pages(
+					array(
+						'exclude'  => '',
+						'title_li' => '',
+					)
+				); // Exclude pages by ID
+				?>
 			</ul>
-			<h2><?php _e( 'Archives:', BOILERPLATE_TEXT_DOMAIN ); ?></h2>
+			<h2><?php _e( 'Archives:', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-archives">
 				<?php wp_get_archives( 'type=monthly&show_post_count=true' ); ?>
 			</ul>
-			<h2><?php _e( 'Posts:', BOILERPLATE_TEXT_DOMAIN ); ?></h2>
+			<h2><?php _e( 'Posts:', 'wp-boilerplate' ); ?></h2>
 			<ul>
 				<?php
 				$categories = get_categories( 'exclude=' ); // Exclude categories by ID
@@ -38,7 +45,7 @@
 				?>
 				<li class="category">
 					<h3>
-						<span class="grey"><?php _e( 'Category:', BOILERPLATE_TEXT_DOMAIN ); ?> </span>
+						<span class="grey"><?php _e( 'Category:', 'wp-boilerplate' ); ?> </span>
 						<?php
 						echo $cat->cat_name;
 						edit_term_link( ' (Edit)', '', '', $cat );
@@ -58,7 +65,8 @@
 							<a href="<?php the_permalink(); ?>"  title="<?php echo $title; ?>">
 								<?php
 								echo $title;
-								edit_post_link( ' (Edit)' ); ?>
+								edit_post_link( ' (Edit)' );
+								?>
 							</a>
 							(<?php comments_number( '0', '1', '%' ); ?>)
 						</li>

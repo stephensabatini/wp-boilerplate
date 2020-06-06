@@ -31,7 +31,7 @@ function setup() {
  * @return void
  */
 function blocks_scripts() {
-	wp_enqueue_script( 'blocks', BOILERPLATE_TEMPLATE_URL . '/dist/js/blocks.js', [], BOILERPLATE_VERSION, true );
+	wp_enqueue_script( 'blocks', BOILERPLATE_TEMPLATE_URL . '/dist/js/blocks.js', array(), BOILERPLATE_VERSION, true );
 }
 
 
@@ -41,8 +41,8 @@ function blocks_scripts() {
  * @return void
  */
 function blocks_editor_scripts() {
-	wp_enqueue_script( 'blocks-editor', BOILERPLATE_TEMPLATE_URL . '/partials/blocks/js/blocks-editor.js', [ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ], BOILERPLATE_VERSION, false );
-	wp_enqueue_style( 'editor-style', BOILERPLATE_TEMPLATE_URL . '/dist/css/editor-style.css', [], BOILERPLATE_VERSION );
+	wp_enqueue_script( 'blocks-editor', BOILERPLATE_TEMPLATE_URL . '/partials/blocks/js/blocks-editor.js', array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ), BOILERPLATE_VERSION, false );
+	wp_enqueue_style( 'editor-style', BOILERPLATE_TEMPLATE_URL . '/dist/css/editor-style.css', array(), BOILERPLATE_VERSION );
 }
 
 /**
@@ -63,7 +63,7 @@ function blocks_categories( $categories, $post ) {
 		array(
 			array(
 				'slug'  => 'wp-boilerplate-blocks',
-				'title' => __( 'Custom Blocks', BOILERPLATE_TEXT_DOMAIN ),
+				'title' => __( 'Custom Blocks', 'wp-boilerplate' ),
 			),
 		)
 	);

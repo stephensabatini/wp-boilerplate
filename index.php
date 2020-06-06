@@ -14,13 +14,13 @@
 
 get_header();
 
-if ( function_exists('yoast_breadcrumb') ) {
-	yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">','</p>' );
+if ( function_exists( 'yoast_breadcrumb' ) ) {
+	yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">', '</p>' );
 }
 
-if (  is_archive() ) {
+if ( is_archive() ) {
 	the_archive_title( '<h1 class="archive-title">', '</h1>' );
-	echo '<p class="archive-description">'. term_description() . '</p>';
+	echo '<p class="archive-description">' . term_description() . '</p>';
 }
 
 if ( have_posts() ) {

@@ -22,31 +22,33 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 	<?php
 	if ( have_comments() ) {
-	?>
+		?>
 	<h2 class="comments-title"><span>Comments</span></h2>
 	<ol class="commentlist">
 		<?php
-		wp_list_comments( array(
-			'style'       => 'ol',
-			'short_ping'  => true,
-			'avatar_size' => 74,
-		) );
+		wp_list_comments(
+			array(
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 74,
+			)
+		);
 		?>
 	</ol>
-	<?php
+		<?php
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
-	?>
+			?>
 	<nav class="navigation comment-navigation" role="navigation">
-		<h2 class="section-heading screen-reader-text"><?php _e( 'Comment Navigation', BOILERPLATE_TEXT_DOMAIN ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', BOILERPLATE_TEXT_DOMAIN ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', BOILERPLATE_TEXT_DOMAIN ) ); ?></div>
+		<h2 class="section-heading screen-reader-text"><?php _e( 'Comment Navigation', 'wp-boilerplate' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'wp-boilerplate' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'wp-boilerplate' ) ); ?></div>
 	</nav>
-	<?php
+			<?php
 		}
 		if ( ! comments_open() && get_comments_number() ) {
-	?>
-	<p class="no-comments"><?php _e( 'Comments are closed.' , BOILERPLATE_TEXT_DOMAIN ); ?></p>
-	<?php
+			?>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'wp-boilerplate' ); ?></p>
+			<?php
 		}
 	}
 	comment_form();

@@ -13,10 +13,12 @@
 	<article id="post-<?php echo $post->ID; ?>" <?php post_class( 'site-main' ); ?>>
 		<?php
 		the_content();
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', BOILERPLATE_TEXT_DOMAIN ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'wp-boilerplate' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</article>
 </main>

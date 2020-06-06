@@ -38,7 +38,7 @@ function setup() {
  * @return void
  */
 function i18n() {
-	load_theme_textdomain( BOILERPLATE_TEXT_DOMAIN, BOILERPLATE_PATH . '/languages' );
+	load_theme_textdomain( 'wp-boilerplate', BOILERPLATE_PATH . '/languages' );
 }
 
 /**
@@ -53,59 +53,66 @@ function theme_setup() {
 
 	// Take advantage of HTML5.
 	add_theme_support(
-		'html5', [
+		'html5',
+		array(
 			'caption',
 			'comment-list',
 			'comment-form',
 			'gallery',
-			'search-form'
-		]
+			'search-form',
+		)
 	);
 
-	add_theme_support( 'post-formats', array(
-		#'aside',
-		#'gallery',
-		#'link',
-		#'image',
-		#'quote',
-		#'status',
-		#'video'
-	) );
+	add_theme_support(
+		'post-formats',
+		array(
+			// 'aside',
+			// 'gallery',
+			// 'link',
+			// 'image',
+			// 'quote',
+			// 'status',
+			// 'video'
+		)
+	);
 
 	// Define our branding colors.
 	add_theme_support(
-		'editor-color-palette', [
-			[
-				'name' => __( 'Primary Color', BOILERPLATE_TEXT_DOMAIN ),
-				'slug' => 'primary',
+		'editor-color-palette',
+		array(
+			array(
+				'name'  => __( 'Primary Color', 'wp-boilerplate' ),
+				'slug'  => 'primary',
 				'color' => '#f68a1f',
-			],
-			[
-				'name' => __( 'Secondary Color', BOILERPLATE_TEXT_DOMAIN ),
-				'slug' => 'secondary',
+			),
+			array(
+				'name'  => __( 'Secondary Color', 'wp-boilerplate' ),
+				'slug'  => 'secondary',
 				'color' => '#116581',
-			],
-			[
-				'name' => __( 'Tertiary Color', BOILERPLATE_TEXT_DOMAIN ),
-				'slug' => 'tertiary',
+			),
+			array(
+				'name'  => __( 'Tertiary Color', 'wp-boilerplate' ),
+				'slug'  => 'tertiary',
 				'color' => '#222',
-			],
-			[
-				'name' => __( 'Quaternary Color', BOILERPLATE_TEXT_DOMAIN ),
-				'slug' => 'quaternary',
+			),
+			array(
+				'name'  => __( 'Quaternary Color', 'wp-boilerplate' ),
+				'slug'  => 'quaternary',
 				'color' => '#fff',
-			]
-		]
+			),
+		)
 	);
 
 	add_theme_support( 'editor-styles' );
 	add_editor_style( BOILERPLATE_TEMPLATE_URL . '/dist/css/index.min.css' );
 
 	// Register navigation menus for wp_nav_menu().
-	register_nav_menus( [
-		'main-navigation'   => __( 'Main Navigation', BOILERPLATE_TEXT_DOMAIN ),
-		'social-navigation' => __( 'Social Navigation', BOILERPLATE_TEXT_DOMAIN )
-	] );
+	register_nav_menus(
+		array(
+			'main-navigation'   => __( 'Main Navigation', 'wp-boilerplate' ),
+			'social-navigation' => __( 'Social Navigation', 'wp-boilerplate' ),
+		)
+	);
 }
 
 /**
@@ -114,7 +121,7 @@ function theme_setup() {
  * @return void
  */
 function scripts() {
-	wp_enqueue_script( 'site', BOILERPLATE_TEMPLATE_URL . '/dist/js/index.min.js', [], BOILERPLATE_VERSION, true );
+	wp_enqueue_script( 'site', BOILERPLATE_TEMPLATE_URL . '/dist/js/index.min.js', array(), BOILERPLATE_VERSION, true );
 	if ( is_singular() && comments_open() && '1' === get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -126,7 +133,7 @@ function scripts() {
  * @return void
  */
 function styles() {
-	wp_enqueue_style( 'site', BOILERPLATE_TEMPLATE_URL . '/dist/css/index.min.css', [], BOILERPLATE_VERSION );
+	wp_enqueue_style( 'site', BOILERPLATE_TEMPLATE_URL . '/dist/css/index.min.css', array(), BOILERPLATE_VERSION );
 }
 
 /**
@@ -135,12 +142,14 @@ function styles() {
  * @return void
  */
 function widgets() {
-	register_sidebar( [
-		'id'            => 'default',
-		'class'         => 'default',
-		'name'          => __( 'Sidebar: Default Template', BOILERPLATE_TEXT_DOMAIN ),
-		'description'   => __( 'The area for the right column of the default, full-width, and narrow-width template pages.', BOILERPLATE_TEXT_DOMAIN ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>'
-	] );
+	register_sidebar(
+		array(
+			'id'            => 'default',
+			'class'         => 'default',
+			'name'          => __( 'Sidebar: Default Template', 'wp-boilerplate' ),
+			'description'   => __( 'The area for the right column of the default, full-width, and narrow-width template pages.', 'wp-boilerplate' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+		)
+	);
 }

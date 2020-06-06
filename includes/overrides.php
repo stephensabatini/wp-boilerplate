@@ -70,7 +70,6 @@ function setup() {
 	add_filter( 'site_icon_image_sizes', $n( 'add_site_icon_image_sizes' ) );
 	add_filter( 'site_icon_meta_tags', $n( 'add_site_icon_meta_tags' ) );
 
-	//
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 	add_action( 'wp_head', $n( 'add_browserconfig' ), 10 );
 
@@ -137,9 +136,10 @@ function add_site_icon_meta_tags( $meta_tags ) {
 
 function custom_excerpt( $more ) {
 	if ( ! is_single() ) {
-		$more = sprintf( '…',
+		$more = sprintf(
+			'…',
 			get_permalink( get_the_ID() ),
-			__( 'Read More', BOILERPLATE_TEXT_DOMAIN )
+			__( 'Read More', 'wp-boilerplate' )
 		);
 	}
 	return $more;
