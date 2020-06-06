@@ -1,7 +1,9 @@
 node_modules
+bower_components
 dist
 vendor
 composer.phar
+composer.lock
 package-lock.json
 yarn.lock
 *.log
@@ -19,10 +21,9 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 *.iws
-# *.iml
-# *.ipr
-# modules.xml
-# .idea/misc.xml
+*.iml
+*.ipr
+modules.xml
 
 
 # SublimeText
