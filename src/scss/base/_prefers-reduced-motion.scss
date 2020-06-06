@@ -1,0 +1,10 @@
+// Reduced motion resets.
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: none !important;
+		transition-duration: none !important;
+	}
+}

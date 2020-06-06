@@ -9,7 +9,7 @@ div.aligncenter {
 }
 
 .alignright {
-	float:right;
+	float: right;
 	margin: 0.25rem 0 1rem 1rem;
 }
 
@@ -19,6 +19,7 @@ div.aligncenter {
 }
 
 a img {
+
 	&.alignright {
 		float: right;
 		margin: 0.25rem 0 1rem 1rem;
@@ -46,6 +47,7 @@ a img {
 	max-width: 96%; /* Image does not overflow the content area */
 	padding: 0.25rem 0.25rem 0.5rem;
 	text-align: center;
+
 	&.alignnone {
 		margin: 0.25rem 1rem 1rem 0;
 	}
@@ -57,9 +59,7 @@ a img {
 	&.alignright {
 		margin: 0.25rem 0 1rem 1rem;
 	}
-}
 
-.wp-caption {
 	img {
 		border: 0 none;
 		height: auto;
@@ -89,6 +89,7 @@ a img {
 	position: absolute !important;
 	width: 1px;
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+
 	&:focus {
 		background-color: #eee;
 		clip: auto !important;
@@ -104,6 +105,7 @@ a img {
 		top: 0.25rem;
 		width: auto;
 		z-index: 100000;
+
 		/* Above WP toolbar. */
 	}
 }

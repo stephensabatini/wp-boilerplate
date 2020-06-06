@@ -2,9 +2,6 @@
  * Stylesheet Index
  *
  * This is where all of the files are bootstrapped in.
- *
- * @author Stephen Sabatini <info@stephensabatini.com>
- * @version 1.0.0
  */
 
 // Abstracts
@@ -15,6 +12,7 @@
 
 // Base
 @import "base/base";
+@import "base/prefers-reduced-motion";
 @import "base/typography";
 @import "base/wordpress";
 
@@ -32,7 +30,5 @@
 
 // Templates
 @import "templates/front-page";
-@import "templates/home";
-@import "templates/full-width";
-@import "templates/narrow-width";
+@import "templates/index";
 @import "templates/site-map";
