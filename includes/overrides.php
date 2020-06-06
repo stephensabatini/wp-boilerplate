@@ -6,7 +6,6 @@
  *
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package Boilerplate\Overrides
- * @version 1.0.0
  * @license GPL, or GNU General Public License, version 2
  */
 

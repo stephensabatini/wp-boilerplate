@@ -7,7 +7,6 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
- * @version 1.0.0
  * @license GPL, or GNU General Public License, version 2
  */
 
@@ -16,7 +15,6 @@ define( 'BOILERPLATE_SITE_URL', get_site_url() );
 define( 'BOILERPLATE_TEMPLATE_URL', get_template_directory_uri() );
 define( 'BOILERPLATE_PATH', get_template_directory() . DIRECTORY_SEPARATOR );
 define( 'BOILERPLATE_INC', BOILERPLATE_PATH . 'includes' . DIRECTORY_SEPARATOR );
-define( 'BOILERPLATE_TEXT_DOMAIN', 'wp-boilerplate' );
 
 require_once BOILERPLATE_INC . 'core.php';
 require_once BOILERPLATE_INC . 'overrides.php';

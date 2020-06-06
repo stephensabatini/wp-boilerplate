@@ -7,7 +7,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
- * @version 1.0.0
  * @license GPL, or GNU General Public License, version 2
  */
 

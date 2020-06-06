@@ -6,12 +6,10 @@
  *
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package Boilerplate\Core
- * @version 1.0.0
  * @license GPL, or GNU General Public License, version 2
  */
 
 namespace Boilerplate\Core;
-
 
 /**
  * Set up theme defaults and register supported WordPress features.
