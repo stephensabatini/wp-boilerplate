@@ -1,171 +1,126 @@
-# Stephen Sabatini
+# WP Boilerplate
 
-This repository contains the WordPress theme files for stephensabatini.com. I've provided instruction below to display skills around documentation of GitHub repositories. This is for demonstrating my skills but may be used as a template for other projects.
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. Also note that we use command line over SSH and Git for these instructions. There are many ways to go about setting this up but this is my preferred method (excluding batch scripts).
-
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-[Server Requirements](https://wordpress.org/about/requirements/)
-
-[Node.js](https://nodejs.org/en/download/)
-
-[WordPress](https://wordpress.org)
-
-If you are working on a remote server then SSH in first. If you're working locally, skip this step.
-
-```
-ssh username@example.com
-<enter_password>
-```
+- Uses [Composer](https://getcomposer.org/) for managing PHP dependencies.
+- Uses [npm](https://www.npmjs.com/) for managing our asset, compiler, and task runner dependencies.
+- Uses [Gulp](https://gulpjs.com/) as a task runner.
+- Uses [SCSS](https://sass-lang.com/) as a backend stylesheet language.
+- Built-in automated optimization and processing of all assets.
+- Adheres to the [WordPress Browser Support](https://make.wordpress.org/core/handbook/best-practices/browser-support/).
+- Adheres to the [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards).
+- Adheres to Automattic’s [VIP Coding Standards](https://github.com/Automattic/VIP-Coding-Standards).
 
 
-Navigate to the root of your website:
-
-`cd your/root/directory/`
-
-
-Proceed with downloading WordPress:
-
-`git clone git@github.com:WordPress/WordPress.git /`
+![Support Level](https://img.shields.io/badge/support-beta-blueviolet.svg)
+![WordPress Theme: Tested WP Version](https://img.shields.io/badge/wordpress-v5.4.1%20tested-brightgreen)
+[ ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg) ](https://github.com/stephensabatini/WP-Boilerplate/blob/master/LICENSE.md)
+![GitHub stars](https://img.shields.io/github/stars/stephensabatini/WP-Boilerplate?style=social)
 
 
-You should be able to visit your website now. Follow the installation instructions in your browser.
+## Requirements
+
+- [WordPress Requirements](https://wordpress.org/about/requirements/)
+- [Supported PHP Versions](https://www.php.net/supported-versions.php)
+- [Composer](https://getcomposer.org/download/)
+- [Node.js](https://nodejs.org/en/download/)
 
 
-### Installing
+## Installation
 
-A step by step series of examples that tell you how to get a local development environment running. We assume you have MAMP installed. If not, you may [install it here](https://www.mamp.info/en/).
+### Overview
 
-
-Command line into the root of your installation and do the following to install the theme:
-
-First, you will navigate to the themes directory:
-
-`cd wp-content/themes/`
+These instructions assume you have an understanding of the command-line interface and Git as this is where the boilerplate really shines.
 
 
-Then, you will clone/download the theme from the repository:
+### WordPress
 
-`git clone https://stephensabatini@bitbucket.org/stephensabatini/stephensabatini.com.git`
-
-
-Then, you will rename the directory to remove the `.com` in the name:
-
-`mv stephensabatini.com stephensabatini`
+If this is your first time setting up WordPress, head over to [How to Install WordPress](https://wordpress.org/support/article/how-to-install-wordpress/).
 
 
-Then, you will navigate into the theme and initialize the repository.
+### Theme
 
-```
-cd stephensabatini
-git init
+There are many ways that this boilerplate theme can be installed but it is recommended that people **use this as a template and fork it** rather than use it as a parent theme of your child theme. The code maintained in this repository will always be geared towards providing the best boilerplate possible. That may also entail code-breaking changes to push the latest in technology. It is recommended that you use Git to then pull your new forked repository into your `/wp-content/themes` directory.
+
+
+### Install Dependencies and Task Runner
+
+```sh
+npm run install:dev
 ```
 
+## Scripts
 
-You should be able to see your theme in the admin. Go ahead and switch to this theme.
+### Running the Compilers, Linters, and Formatters
+
+In this project, we use Node.js and Gulp to compile our assets and manage our dependencies.
+
+`npm run start` - Runs all of the compiler tasks in parallel to build our production assets.  
+`npm run watch` - Runs all of the watch tasks in parallel.  
+`npm run watch:css` - Monitor `src/scss` directory and run sass task on change.  
+`npm run watch:js` - Monitor `src/js` directory and run js task on change.  
+`npm run watch:images` - Monitor `src/images` directory and run images task on change.  
+`npm run build` - Runs all of the compiler tasks in parallel.  
+`npm run build:css` - Compile SCSS from `src/scss` into CSS and concatenate files to `dist/index.css` and `dist/index.min.css`.  
+`npm run build:js` - Compile JS from `src/js` and concatenate files to `script.js` and `script.min.js`.  
+`npm run build:images` - Optimize any new images in the `src/images` directory to `dist/images`.  
+`npm run install` - Install production dependencies and build the assets.  
+`npm run install:prod` - An alias for `npm run install`. Preferable when using in scripts to improve clarity.  
+`npm run install:dev` - Install development dependencies and build the assets.  
+`npm run lint` - Runs all of the lint tasks in parallel.  
+`npm run lint:css` - Lint the SCSS/CSS.  
+`npm run lint:js` - Lint the JS.  
+`npm run lint:php` - Lint the PHP. Alias of `composer run lint`.  
+`npm run format` - Runs all of the format tasks in parallel.  
+`npm run format:css` - Format the SCSS/CSS.  
+`npm run format:js` - Format the JS.  
+`npm run format:php` - Format the PHP. Alias of `composer run format:php`.  
 
 
-## Running the compilers
+#### Note About Linters
 
-In this project we use Node.js and Gulp to compile our assets and manage our dependencies.
+Linters are great tools used to push even better code, but remember there are exceptions to the rules. Be sure to document those exceptions where appropriate using [`phpcs:`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-parts-of-a-file).
 
-`gulp` - Runs all of the compiler and watch tasks in parallel. (default)  
-`gulp run` - Runs all of the compiler tasks in parallel.  
-`gulp watch` - Runs all of the watch tasks in parallel.  
-`gulp clean` - Deletes any files or folders output by the compiler for a clean start. (script.js, script.min.js, style.css, style.min.css, compiled images)  
-`gulp sass` - Compile SCSS to CSS and combine files to style.css and style.min.css (minified).  
-`gulp js` - Compile JS and combine files to script.js and script.min.js (minified).  
-`gulp images` - Optimize any new images in the src/images directory to images.  
-`gulp watch:sass` - Monitor src/scss directory and run sass task on change.  
-`gulp watch:js` - Monitor src/js directory and run js task on change.  
-`gulp watch:images` - Monitor src/images directory and run images task on change.  
+
+#### Note About Formatters
+
+Although Formatters do a great job of automating a lot of the formatting they are not perfect. Please use this tool as a method to assist you in executing your responsibilities to push outstanding code but not as a method to solely rely on.
+
+
+## Architecture
+
+### General
+
+`dist` - Where all of the assets are compiled and concatenated to.  
+`includes` - This contains purely backend things such as configuration, hooks, filters, classes, helper/utility functions, etc.  
+`includes/classes`  Any classes defined here are autoloaded using composer and are accessible across the theme.  
+`languages` - Where the language files are stored.  
+`node_modules` - This contains the Node.js dependencies.  
+`partials` - This contains the presentational components.  
+`partials/blocks` - This contains the editor blocks.  
+`src` - Where all of the assets are stored.  
+`templates` - This contains the page templates (or wrappers) to keep the root clean.  
+`vendor` - This contains the PHP dependencies.
+
+
+### SCSS
+
+`src/scss/abstracts` - Where all global definitions for use across your SASS are defined.  
+`src/scss/vendors` - Where all third-party SCSS/CSS is imported from.  
+`src/scss/base` - Where all base styles such as HTML elements and style resets.  
+`src/scss/layout` - Where all layout/section components are such as the Header, Navigation, Sidebar, Footer, and Forms.  
+`src/scss/partials` - Mocks the structure of the `/partials` directory.  
+`src/scss/partials/blocks` -   Mocks the structure of the `partials/blocks` directory.  
+`src/scss/templates` -  Mocks the structure of the `templates` directory.
 
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Run the following command to install all production dependencies and build the assets.
 
-
-First you will SSH into the server.
-
-```
-ssh username@example.com
-<enter_password>
+```sh
+npm run install
 ```
 
 
-Then you will install WordPress:
+## Do you like what you see?
 
-`git clone git@github.com:WordPress/WordPress.git /`
-
-
-Then you will install the theme:
-
-```
-cd wp-content/themes/
-git clone https://stephensabatini@bitbucket.org/stephensabatini/stephensabatini.com.git
-mv stephensabatini.com stephensabatini
-cd stephensabatini
-git init
-```
-
-
-You should be able to visit your website now. Link your database up, login, and switch your theme.
-
-
-Also, please read:
-
-* Configuring your wp-config.php.
-* Configuring your .htaccess.
-* Configuring your crossdomain.xml.
-
-
-## Browser Support
-
-* [WordPress Browser Support](https://make.wordpress.org/core/handbook/best-practices/browser-support/)
-* [Browserl.ist](https://browserl.ist/?q=%3E+1%25%2C+ie+%3E%3D+11%2C+last+1+Android+versions%2C+last+1+ChromeAndroid+versions%2C+last+2+Chrome+versions%2C+last+2+Firefox+versions%2C+last+2+Safari+versions%2C+last+2+iOS+versions%2C+last+2+Edge+versions%2C+last+2+Opera+versions)
-
-
-## Built With
-
-* [WordPress](https://wordpress.org/) - Content Management System
-* [PHP](https://secure.php.net/) - Backend Programming Language
-* [HTML5](https://www.w3.org/TR/html/) - Frontend Markup Language
-* [CSS3](https://www.w3.org/TR/CSS/) - Frontend Stylesheet Language
-* [SASS](https://sass-lang.com/) - Backend Stylesheet Language
-* [Node.js](https://nodejs.org/en/) - Dependency Management
-* [Gulp](https://gulpjs.com/) - Asset Compiler
-
-
-## Versioning
-
-We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-
-## SASS Architecture
-
-We use [Sass Guidelines](https://sass-guidelin.es/) for structuring our SASS files.
-
-
-## Authors
-
-* **[Stephen Sabatini](https://www.stephensabatini.com/)**
-
-
-## License
-
-This is free software, and is released under the terms of the GNU General Public License (GPL) version 2. See the [LICENSE.md](LICENSE.md) file for details
-
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+[ ![Hire Me](https://storage.cloud.google.com/stephensabatini/stephen-sabatini-version-control-banner.jpg) ](https://stephensabatini.com)
