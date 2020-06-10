@@ -7,9 +7,10 @@
  * @package WP-Boilerplate
  * @license MIT
  */
+
 ?>
 <main id="main-wrapper" class="site-main-wrapper" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-	<article id="post-<?php echo $post->ID; ?>" <?php post_class( 'site-main' ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'site-main' ); ?>>
 		<?php
 		the_content();
 		wp_link_pages(
@@ -19,5 +20,5 @@
 			)
 		);
 		?>
-	</article>
-</main>
+	</article><!-- .site-main -->
+</main><!-- #main-wrapper -->

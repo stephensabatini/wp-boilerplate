@@ -20,12 +20,11 @@ require_once BOILERPLATE_INC . 'core.php';
 require_once BOILERPLATE_INC . 'overrides.php';
 require_once BOILERPLATE_INC . 'template-tags.php';
 require_once BOILERPLATE_INC . 'utilities.php';
-require_once BOILERPLATE_INC . 'blocks.php';
 
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once 'vendor/autoload.php';
+$autoload_relative_path = 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+if ( file_exists( __DIR__ . DIRECTORY_SEPARATOR . $autoload_relative_path ) ) {
+	require_once $autoload_relative_path;
 }
 
 Boilerplate\Core\setup();
 Boilerplate\Overrides\setup();
-Boilerplate\Blocks\setup();

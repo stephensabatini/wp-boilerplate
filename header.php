@@ -9,14 +9,15 @@
  * @package WP-Boilerplate
  * @license MIT
  */
+
 $is_front_page = is_front_page();
 
 if ( is_single() || is_archive() ) {
-	$heading_tag = 'div';
-	$post_id     = get_option( 'page_for_posts', true );
+	$heading_tag     = 'div';
+	$current_post_id = get_option( 'page_for_posts', true );
 } else {
-	$heading_tag = 'h1';
-	$post_id     = get_queried_object_id();
+	$heading_tag     = 'h1';
+	$current_post_id = get_queried_object_id();
 }
 ?>
 <!DOCTYPE html>
@@ -35,14 +36,16 @@ if ( is_single() || is_archive() ) {
 				<?php
 				if ( $is_front_page ) {
 					?>
-				<h1 class="site-name"><?php bloginfo( 'name' ); ?></h1>
-				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+					<h1 class="site-name"><?php bloginfo( 'name' ); ?></h1>
+					<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 					<?php
 				} else {
 					?>
-				<<?php echo $heading_tag; ?> class="site-name"><?php echo get_the_title( $post_id ); ?></<?php echo $heading_tag; ?>>
+					<<?php echo sanitize_html_class( $heading_tag ); ?> class="site-name">
+						<?php echo wp_kses_post( get_the_title( $current_post_id ) ); ?>
+					</<?php echo sanitize_html_class( $heading_tag ); ?>><!-- .site-name -->
 					<?php
 				}
 				get_template_part( 'partials/navigation/navigation', 'main' );
 				?>
-			</header>
+			</header><!-- #header -->

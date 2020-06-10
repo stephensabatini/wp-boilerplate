@@ -7,13 +7,13 @@
  * @package WP-Boilerplate
  * @license MIT
  */
-$text      = trim( strip_tags( get_the_content() ) );
+
+$text      = trim( wp_strip_all_tags( get_the_content() ) );
 $count     = preg_match_all( '~\s+~', "$text ", $m );
 $read_time = intval( $count / 200 ); // 200 is the average words per minute a human reads.
-$permalink = urlencode( get_permalink() );
 ?>
-<main id="site-main" class="site-main col" role="main">
-	<article id="post-<?php echo $post->ID; ?>" <?php post_class(); ?> itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
+<main id="main-wrapper" class="site-main-wrapper" role="main">
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'site-main' ); ?> itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
 		<header class="entry-header">
 			<?php
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
@@ -23,22 +23,33 @@ $permalink = urlencode( get_permalink() );
 			?>
 			<div class="entry-meta">
 				<span class="author">
-				<?php
-				_e( 'By ' );
-				the_author();
-				?>
-				</span>
-				<span class="published"><time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time></span>
+					<?php
+					printf(
+						/* translators: %s: The author's display name */
+						esc_html__( 'By %s', 'wp-boilerplate' ),
+						get_the_author()
+					);
+					?>
+				</span><!-- .author -->
+				<span class="published">
+					<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished">
+						<?php echo get_the_date(); ?>
+					</time>
+				</span><!-- .published -->
 				<span class="read-time">
-				<?php
-				echo $read_time;
-				_e( ' minute read' );
-				?>
-				</span>
-				<span class="share">Share on <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode( get_the_title() ); ?>&amp;url=<?php echo $permalink; ?>">Twitter</a> or <a href="https://cats.smashing.services/ball?uri=//www.linkedin.com/shareArticle?url=<?php echo $permalink; ?>&amp;title=<?php echo urlencode( get_the_title() ); ?>">LinkedIn</a></span>
+					<?php
+					echo esc_html(
+						sprintf(
+							/* translators: %s: Number of minutes it takes to read this post */
+							__( '%s minute read', 'wp-boilerplate' ),
+							$read_time
+						)
+					);
+					?>
+				</span><!-- .read-time -->
 				<?php the_tags( '<div class="tags"><h3 class="screen-reader-text">' . __( 'Tags: ' ) . '</h3>', '', '</div>' ); ?>
-			</div>
-		</header>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
 		<?php
 		the_content();
 		wp_link_pages(
@@ -48,5 +59,5 @@ $permalink = urlencode( get_permalink() );
 			)
 		);
 		?>
-	</article>
-</main>
+	</article><!-- .site-main -->
+</main><!-- #main-wrapper -->

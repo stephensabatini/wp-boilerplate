@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'default' ) ) {
 	return;
 }
 ?>
-<aside id="sidebar" class="sidebar-content widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar', BOILERPLATE_TEXT_DOMAIN ); ?>">
+<aside id="sidebar" class="sidebar-content widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar', 'wp-boilerplate' ); ?>">
 	<?php dynamic_sidebar( 'default' ); ?>
 </aside><!-- #sidebar -->

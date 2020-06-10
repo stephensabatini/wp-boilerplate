@@ -14,7 +14,7 @@ if ( ! has_nav_menu( 'main-navigation' ) ) {
 <nav id="main-navigation-wrapper" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_attr_e( 'Main', 'wp-boilerplate' ); ?>">
 	<button id="main-navigation-toggle" class="main-navigation-toggle" aria-label="<?php esc_attr_e( 'Open Navigation', 'wp-boilerplate' ); ?>" aria-controls="main-navigation" aria-expanded="false">
 		<span aria-hidden="true">&#9776;</span>
-	</button>
+	</button><!-- #main-navigation-toggle -->
 	<?php
 	wp_nav_menu(
 		array(
@@ -24,4 +24,4 @@ if ( ! has_nav_menu( 'main-navigation' ) ) {
 		)
 	);
 	?>
-</nav>
+</nav><!-- #main-navigation-wrapper -->

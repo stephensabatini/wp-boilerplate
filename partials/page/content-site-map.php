@@ -7,77 +7,75 @@
  * @package WP-Boilerplate
  * @license MIT
  */
+
+$categories = get_categories();
 ?>
 <main id="main-wrapper" class="site-main-wrapper" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-	<article id="post-<?php echo $post->ID; ?>" <?php post_class( 'site-main' ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'site-main' ); ?>>
 		<header class="entry-header">
 			<?php
 			the_title( '<h1 class="entry-title">', '</h1>' );
-			edit_post_link( ' (Edit )' );
+			edit_post_link( ' (Edit)' );
 			?>
-		</header>
+		</header><!-- .entry-header -->
 		<div class="entry-content">
 			<h2><?php _e( 'Author(s):', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-authors">
 				<?php wp_list_authors( 'exclude_admin=1&optioncount=1' ); ?>
-			</ul>
+			</ul><!-- .sitemap-authors -->
 			<h2><?php _e( 'Pages:', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-pages">
-				<?php
-				wp_list_pages(
-					array(
-						'exclude'  => '',
-						'title_li' => '',
-					)
-				); // Exclude pages by ID
-				?>
-			</ul>
+				<?php wp_list_pages(); ?>
+			</ul><!-- .sitemap-pages -->
 			<h2><?php _e( 'Archives:', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-archives">
 				<?php wp_get_archives( 'type=monthly&show_post_count=true' ); ?>
-			</ul>
+			</ul><!-- .sitemap-archives -->
 			<h2><?php _e( 'Posts:', 'wp-boilerplate' ); ?></h2>
 			<ul>
-				<?php
-				$categories = get_categories( 'exclude=' ); // Exclude categories by ID
-				foreach ( $categories as $cat ) {
-				?>
+				<?php foreach ( $categories as $category ) { ?>
 				<li class="category">
 					<h3>
 						<span class="grey"><?php _e( 'Category:', 'wp-boilerplate' ); ?> </span>
 						<?php
-						echo $cat->cat_name;
-						edit_term_link( ' (Edit)', '', '', $cat );
+						echo esc_html( $category->cat_name );
+						edit_term_link( ' (Edit)', '', '', $category );
 						?>
 					</h3>
 					<ul class="cat-posts">
 						<?php
-						query_posts( 'posts_per_page=-1&cat=' . $cat->cat_ID ); // -1 shows all posts per category. 1 to show most recent post.
-						while ( have_posts() ) {
+						$posts_by_category = new WP_Query(
+							array(
+								// -1 shows all posts per category. 1 to show most recent post.
+								'posts_per_page' => -1,
+								'cat'            => $category->cat_ID,
+							)
+						);
+
+						while ( $posts_by_category->have_posts() ) {
 							the_post();
-							$category = get_the_category();
-							if ( $category[0]->cat_ID === $cat->cat_ID ) {
-								$title = get_the_title();
-						?>
-						<li>
-							<?php the_time( 'M d, Y' ); ?> &raquo;
-							<a href="<?php the_permalink(); ?>"  title="<?php echo $title; ?>">
-								<?php
-								echo $title;
-								edit_post_link( ' (Edit)' );
+							$post_category = get_the_category();
+							if ( $post_category[0]->cat_ID === $category->cat_ID ) {
 								?>
-							</a>
-							(<?php comments_number( '0', '1', '%' ); ?>)
-						</li>
-						<?php
+								<li>
+									<?php the_time( 'M d, Y' ); ?> &raquo;
+									<a href="<?php the_permalink(); ?>">
+										<?php
+										the_title();
+										edit_post_link( ' (Edit)' );
+										?>
+									</a>
+									(<?php comments_number( '0', '1', '%' ); ?>)
+								</li>
+								<?php
 							}
 						}
 						?>
-					</ul>
-				</li>
+					</ul><!-- .cat-posts -->
+				</li><!-- .category -->
 				<?php } ?>
 			</ul>
-			<?php wp_reset_query(); ?>
-		</div>
-	</article>
-</main>
+			<?php wp_reset_postdata(); ?>
+		</div><!-- .entry-content -->
+	</article><!-- .site-main -->
+</main><!-- #main-wrapper -->

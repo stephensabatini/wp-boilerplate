@@ -61,17 +61,10 @@ function theme_setup() {
 		)
 	);
 
+	// Options are aside, gallery, link, image, quote, status, and video.
 	add_theme_support(
 		'post-formats',
-		array(
-			// 'aside',
-			// 'gallery',
-			// 'link',
-			// 'image',
-			// 'quote',
-			// 'status',
-			// 'video'
-		)
+		array()
 	);
 
 	// Define our branding colors.
