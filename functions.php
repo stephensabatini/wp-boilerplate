@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
- * @license GPL, or GNU General Public License, version 2
+ * @license MIT
  */
 
 define( 'BOILERPLATE_VERSION', '1.0.0' );

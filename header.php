@@ -7,7 +7,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
- * @license GPL, or GNU General Public License, version 2
  * @license MIT
  */
 $is_front_page = is_front_page();

@@ -4,9 +4,7 @@
  * Defined all of our gulp plugins, tasks, and functionality for use with
  * compiling our source assets.
  *
- * @version 1.0.0
  * @author Stephen Sabatini <info@stephensabatini.com>
- * @license https://opensource.org/licenses/gpl-license.php GNU Public License
  * @license MIT
  */
 
