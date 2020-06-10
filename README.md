@@ -100,13 +100,13 @@ Although Formatters do a great job of automating a lot of the formatting they ar
 
 ### SCSS
 
-The following definitions live in the [`assets/src/scss/`](https://github.com/stephensabatini/WP-Boilerplate/tree/master/assets/src/scss) directory:
+The following definitions live in the [`assets/src/scss`](https://github.com/stephensabatini/WP-Boilerplate/tree/master/assets/src/scss) directory:
 
 `abstracts` - Global definitions for use across your SASS.  
 `vendors` - Third-party SCSS/CSS imports.  
 `base` - Base styles such as HTML elements and style resets.  
 `layout` - Layout components such as the Header, Navigation, Sidebar, Footer, and Forms.  
-`template-parts` - Mocks the structure of the `/template-parts` directory.   
+`template-parts` - Mocks the structure of the `template-parts` directory.   
 `templates` -  Mocks the structure of the `templates` directory.
 
 

@@ -95,7 +95,7 @@ function theme_setup() {
 	);
 
 	add_theme_support( 'editor-styles' );
-	add_editor_style( BOILERPLATE_TEMPLATE_URL . '/dist/css/index.min.css' );
+	add_editor_style( BOILERPLATE_TEMPLATE_URL . '/assets/dist/css/index.min.css' );
 
 	// Register navigation menus for wp_nav_menu().
 	register_nav_menus(
