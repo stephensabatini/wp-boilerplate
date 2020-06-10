@@ -91,12 +91,12 @@ Although Formatters do a great job of automating a lot of the formatting they ar
 `assets/dist` - Compiled and concatenated distributable assets.  
 `assets/src` - Source assets (where you will work from).  
 `includes` - Purely backend things such as configuration, hooks, filters, classes, utility functions, etc.  
-`includes/classes`  Any classes defined here are autoloaded using composer and are accessible across the theme.  
-`languages` - Where the language files are stored.  
-`node_modules` - This contains the Node.js dependencies.  
-`template-parts` - This contains the presentational components.  
-`templates` - This contains the page templates (or wrappers) to keep the root clean.  
-`vendor` - This contains the PHP dependencies.
+`includes/classes`  Classes defined here are autoloaded using Composer.  
+`languages` Language files.  
+`node_modules` - Node.js dependencies.  
+`template-parts` - Presentational components.  
+`templates` - Page templates.  
+`vendor` - PHP dependencies.
 
 
 ### SCSS
