@@ -118,3 +118,6 @@ Run the following command to install all production dependencies and build the a
 ```sh
 npm run install
 ```
+
+
+[![Do you like what you see? Hire me.](https://stephensabatini.s3.amazonaws.com/github/stephen-sabatini-version-control-banner.jpg)](https://stephensabatini.com/contact/)
