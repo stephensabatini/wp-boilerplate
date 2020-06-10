@@ -54,13 +54,13 @@ In this project, we use Node.js and Gulp to compile our assets and manage our de
 
 `npm run start` - Runs all of the compiler tasks in parallel to build our production assets.  
 `npm run watch` - Runs all of the watch tasks in parallel.  
-`npm run watch:css` - Monitor `src/scss` directory and run sass task on change.  
-`npm run watch:js` - Monitor `src/js` directory and run js task on change.  
-`npm run watch:images` - Monitor `src/images` directory and run images task on change.  
+`npm run watch:css` - Monitor `assets/src/scss` directory and run sass task on change.  
+`npm run watch:js` - Monitor `assets/src/js` directory and run js task on change.  
+`npm run watch:images` - Monitor `assets/src/images` directory and run images task on change.  
 `npm run build` - Runs all of the compiler tasks in parallel.  
-`npm run build:css` - Compile SCSS from `src/scss` into CSS and concatenate files to `dist/index.css` and `dist/index.min.css`.  
-`npm run build:js` - Compile JS from `src/js` and concatenate files to `script.js` and `script.min.js`.  
-`npm run build:images` - Optimize any new images in the `src/images` directory to `dist/images`.  
+`npm run build:css` - Compile and concatenate SCSS to `assets/dist/css`.  
+`npm run build:js` - Compile and concatenate JS to `assets/dist/js`.  
+`npm run build:images` - Optimize new images to `assets/dist/images`.  
 `npm run install` - Install production dependencies and build the assets.  
 `npm run install:prod` - An alias for `npm run install`. Preferable when using in scripts to improve clarity.  
 `npm run install:dev` - Install development dependencies and build the assets.  
