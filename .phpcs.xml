@@ -16,7 +16,7 @@
 	<config name="minimum_supported_wp_version" value="5.4" />
 
 	<!-- Mininmum supported PHP version. -->
-	<config name="testVersion" value="7.3-"/>
+	<config name="testVersion" value="7.2-"/>
 
 	<!-- Loads the PHP Compatibility ruleset. -->
 	<rule ref="PHPCompatibilityWP">
