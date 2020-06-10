@@ -12,8 +12,7 @@
 
 ![Support Level](https://img.shields.io/badge/support-beta-blueviolet.svg)
 ![WordPress Theme: Tested WP Version](https://img.shields.io/badge/wordpress-v5.4.1%20tested-brightgreen)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/stephensabatini/WP-Boilerplate/blob/master/LICENSE.md)
-![GitHub stars](https://img.shields.io/github/stars/stephensabatini/WP-Boilerplate?style=social)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/stephensabatini/WP-Boilerplate/blob/master/LICENSE.md)
 
 
 ## Requirements
