@@ -1,13 +1,12 @@
 # WP Boilerplate
 
 - Uses [Composer](https://getcomposer.org/) for managing PHP dependencies.
-- Uses [npm](https://www.npmjs.com/) for managing our asset, compiler, and task runner dependencies.
+- Uses [npm](https://www.npmjs.com/) for managing asset, compiler, and task runner dependencies.
 - Uses [Gulp](https://gulpjs.com/) as a task runner.
 - Uses [SCSS](https://sass-lang.com/) as a backend stylesheet language.
 - Built-in automated optimization and processing of all assets.
 - Adheres to the [WordPress Browser Support](https://make.wordpress.org/core/handbook/best-practices/browser-support/).
 - Adheres to the [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards).
-- Adheres to Automattic’s [VIP Coding Standards](https://github.com/Automattic/VIP-Coding-Standards).
 
 
 ![Support Level](https://img.shields.io/badge/support-beta-blueviolet.svg)
