@@ -27,9 +27,9 @@ const plugins = require( 'gulp-load-plugins' )( {
 
 // Where we get our source files from that we're going to compile.
 const srcPaths = {
-	scss: 'src/scss/',
-	js: 'src/js/',
-	images: 'src/images/',
+	scss: 'assets/src/scss/',
+	js: 'assets/src/js/',
+	images: 'assets/src/images/',
 };
 
 const srcFiles = {
@@ -50,9 +50,9 @@ const srcFiles = {
 
 // Where our files are output after being compiled.
 const destPaths = {
-	css: 'dist/css/',
-	js: 'dist/js/',
-	images: 'dist/images/',
+	css: 'assets/dist/css/',
+	js: 'assets/dist/js/',
+	images: 'assets/dist/images/',
 };
 
 const outputFile = {

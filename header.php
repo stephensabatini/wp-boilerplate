@@ -46,6 +46,6 @@ if ( is_single() || is_archive() ) {
 					</<?php echo sanitize_html_class( $heading_tag ); ?>><!-- .site-name -->
 					<?php
 				}
-				get_template_part( 'partials/navigation/navigation', 'main' );
+				get_template_part( 'template-parts/navigation/navigation', 'main' );
 				?>
 			</header><!-- #header -->

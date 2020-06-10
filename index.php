@@ -25,11 +25,11 @@ if ( is_archive() ) {
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'partials/post/excerpt/content', get_post_format() );
+		get_template_part( 'template-parts/post/excerpt/content', get_post_format() );
 	}
 	the_posts_pagination();
 } else {
-	get_template_part( 'partials/post/excerpt/content', 'none' );
+	get_template_part( 'template-parts/post/excerpt/content', 'none' );
 }
 
 get_sidebar();

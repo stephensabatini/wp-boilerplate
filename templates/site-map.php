@@ -15,7 +15,7 @@ get_header();
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'partials/page/content', 'site-map' );
+		get_template_part( 'template-parts/page/content', 'site-map' );
 
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) {
@@ -23,7 +23,7 @@ if ( have_posts() ) {
 		}
 	}
 } else {
-	get_template_part( 'partials/post/content', 'none' );
+	get_template_part( 'template-parts/post/content', 'none' );
 }
 
 get_sidebar();
