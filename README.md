@@ -89,7 +89,7 @@ Although Formatters do a great job of automating a lot of the formatting they ar
 ### General
 
 `dist` - Where all of the assets are compiled and concatenated to.  
-`includes` - This contains purely backend things such as configuration, hooks, filters, classes, helper/utility functions, etc.  
+`includes` - This contains purely backend things such as configuration, hooks, filters, classes, utility functions, etc.  
 `includes/classes`  Any classes defined here are autoloaded using composer and are accessible across the theme.  
 `languages` - Where the language files are stored.  
 `node_modules` - This contains the Node.js dependencies.  
@@ -105,7 +105,7 @@ Although Formatters do a great job of automating a lot of the formatting they ar
 `src/scss/abstracts` - Where all global definitions for use across your SASS are defined.  
 `src/scss/vendors` - Where all third-party SCSS/CSS is imported from.  
 `src/scss/base` - Where all base styles such as HTML elements and style resets.  
-`src/scss/layout` - Where all layout/section components are such as the Header, Navigation, Sidebar, Footer, and Forms.  
+`src/scss/layout` - Where all layout components are such as the Header, Navigation, Sidebar, Footer, and Forms.  
 `src/scss/partials` - Mocks the structure of the `/partials` directory.  
 `src/scss/partials/blocks` -   Mocks the structure of the `partials/blocks` directory.  
 `src/scss/templates` -  Mocks the structure of the `templates` directory.
