@@ -1,0 +1,42 @@
+{
+	"name": "stephensabatini/wp-boilerplate",
+	"description": "A WordPress boilerplate theme.",
+	"type": "wordpress-theme",
+	"authors": [
+		{
+			"name": "stephensabatini",
+			"email": "info@stephensabatini.com",
+			"homepage": "https://stephensabatini.com",
+			"role": "developer"
+		}
+	],
+	"readme": "README.md",
+	"license": "GPL-3.0-or-later",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=7.3"
+	},
+	"require-dev": {
+		"automattic/vipwpcs": "*",
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"phpcompatibility/php-compatibility": "*",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"phpcsstandards/phpcsdevtools": "*",
+		"phpunit/phpunit": "*",
+		"squizlabs/php_codesniffer": "*",
+		"wp-coding-standards/wpcs": "*",
+		"stephensabatini/jetpack-development-mode": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"Boilerplate\\": "includes/classes/"
+		}
+	},
+	"scripts": {
+		"install:prod": "composer install --no-dev",
+		"lint:php": "./vendor/bin/phpcs .",
+		"format:php": "./vendor/bin/phpcbf .",
+		"verify": "composer validate --no-check-all --no-check-publish --strict"
+	}
+}
