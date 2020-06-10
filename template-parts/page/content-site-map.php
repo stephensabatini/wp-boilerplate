@@ -19,24 +19,24 @@ $categories = get_categories();
 			?>
 		</header><!-- .entry-header -->
 		<div class="entry-content">
-			<h2><?php _e( 'Author(s):', 'wp-boilerplate' ); ?></h2>
+			<h2><?php esc_html_e( 'Author(s):', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-authors">
 				<?php wp_list_authors( 'exclude_admin=1&optioncount=1' ); ?>
 			</ul><!-- .sitemap-authors -->
-			<h2><?php _e( 'Pages:', 'wp-boilerplate' ); ?></h2>
+			<h2><?php esc_html_e( 'Pages:', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-pages">
 				<?php wp_list_pages(); ?>
 			</ul><!-- .sitemap-pages -->
-			<h2><?php _e( 'Archives:', 'wp-boilerplate' ); ?></h2>
+			<h2><?php esc_html_e( 'Archives:', 'wp-boilerplate' ); ?></h2>
 			<ul class="sitemap-archives">
 				<?php wp_get_archives( 'type=monthly&show_post_count=true' ); ?>
 			</ul><!-- .sitemap-archives -->
-			<h2><?php _e( 'Posts:', 'wp-boilerplate' ); ?></h2>
+			<h2><?php esc_html_e( 'Posts:', 'wp-boilerplate' ); ?></h2>
 			<ul>
 				<?php foreach ( $categories as $category ) { ?>
 				<li class="category">
 					<h3>
-						<span class="grey"><?php _e( 'Category:', 'wp-boilerplate' ); ?> </span>
+						<span class="grey"><?php esc_html_e( 'Category:', 'wp-boilerplate' ); ?> </span>
 						<?php
 						echo esc_html( $category->cat_name );
 						edit_term_link( ' (Edit)', '', '', $category );

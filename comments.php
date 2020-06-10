@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 	<?php
 	if ( have_comments() ) {
 		?>
-		<h2 class="comments-title"><?php _e( 'Comments', 'wp-boilerplate' ); ?></h2>
+		<h2 class="comments-title"><?php esc_html_e( 'Comments', 'wp-boilerplate' ); ?></h2>
 		<ol class="commentlist">
 			<?php
 			wp_list_comments(
@@ -39,7 +39,7 @@ if ( post_password_required() ) {
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
 			?>
 			<nav class="comment-navigation" role="navigation">
-				<h3 class="screen-reader-text"><?php _e( 'Comment Navigation', 'wp-boilerplate' ); ?></h3>
+				<h3 class="screen-reader-text"><?php esc_html_e( 'Comment Navigation', 'wp-boilerplate' ); ?></h3>
 				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'wp-boilerplate' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'wp-boilerplate' ) ); ?></div>
 			</nav><!-- .comment-navigation -->
@@ -47,7 +47,7 @@ if ( post_password_required() ) {
 		}
 		if ( ! comments_open() && get_comments_number() ) {
 			?>
-			<p class="no-comments"><?php _e( 'Comments are closed.', 'wp-boilerplate' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wp-boilerplate' ); ?></p>
 			<?php
 		}
 	}

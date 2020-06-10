@@ -12,7 +12,7 @@
 <main id="main-wrapper" class="site-main-wrapper" role="main">
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'site-main no-results not-found' ); ?> itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
 		<header class="entry-header">
-			<h1 class="entry-title"><?php _e( 'Nothing Found', 'wp-boilerplate' ); ?></h1>
+			<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'wp-boilerplate' ); ?></h1>
 		</header><!-- .entry-header -->
 		<div class="entry-content">
 			<?php
@@ -30,7 +30,7 @@
 				<?php
 			} else {
 				?>
-				<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp-boilerplate' ); ?></p>
+				<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp-boilerplate' ); ?></p>
 				<?php
 				get_search_form();
 			}

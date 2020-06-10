@@ -30,7 +30,7 @@ if ( is_single() || is_archive() ) {
 	</head>
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
-		<a class="skip-link" href="#main-wrapper"><?php _e( 'Skip to Main Content', 'wp-boilerplate' ); ?></a>
+		<a class="skip-link" href="#main-wrapper"><?php esc_html_e( 'Skip to Main Content', 'wp-boilerplate' ); ?></a>
 		<div id="wrapper" class="site-wrapper">
 			<header id="header" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
 				<?php
