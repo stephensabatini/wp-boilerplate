@@ -18,15 +18,13 @@
 		"php": ">=7.3"
 	},
 	"require-dev": {
-		"automattic/vipwpcs": "*",
 		"dealerdirect/phpcodesniffer-composer-installer": "*",
 		"phpcompatibility/php-compatibility": "*",
 		"phpcompatibility/phpcompatibility-wp": "*",
 		"phpcsstandards/phpcsdevtools": "*",
 		"phpunit/phpunit": "*",
 		"squizlabs/php_codesniffer": "*",
-		"wp-coding-standards/wpcs": "*",
-		"stephensabatini/jetpack-development-mode": "dev-master"
+		"wp-coding-standards/wpcs": "*"
 	},
 	"autoload": {
 		"psr-4": {
