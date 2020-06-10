@@ -58,7 +58,7 @@ In this project, we use Node.js and Gulp to compile our assets and manage our de
 `npm run watch:js` - Monitor `src/js` directory and run js task on change.  
 `npm run watch:images` - Monitor `src/images` directory and run images task on change.  
 `npm run build` - Runs all of the compiler tasks in parallel.  
-`npm run build:css` - Compile SCSS from `src/scss` into CSS and concatenate files to `dist/index.css` and `dist/index.min.css`.  
+`npm run build:css` - Compile and concatenate SCSS to `dist/css/index.css` and `dist/css/index.min.css`.  
 `npm run build:js` - Compile JS from `src/js` and concatenate files to `script.js` and `script.min.js`.  
 `npm run build:images` - Optimize any new images in the `src/images` directory to `dist/images`.  
 `npm run install` - Install production dependencies and build the assets.  
