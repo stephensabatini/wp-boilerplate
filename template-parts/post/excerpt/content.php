@@ -8,9 +8,9 @@
  * @license MIT
  */
 
-$text      = trim( wp_strip_all_tags( get_the_content() ) );
-$count     = preg_match_all( '~\s+~', "$text ", $m );
-$read_time = intval( $count / 200 ); // 200 is the average words per minute a human reads.
+namespace Boilerplate\Utilities;
+
+use function Boilerplate\Utilities\get_the_read_time;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -36,7 +36,7 @@ $read_time = intval( $count / 200 ); // 200 is the average words per minute a hu
 					sprintf(
 						/* translators: %s: Number of minutes it takes to read this post */
 						__( '%s minute read', 'wp-boilerplate' ),
-						$read_time
+						get_the_read_time()
 					)
 				);
 				?>
