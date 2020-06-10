@@ -1,0 +1,24 @@
+language: php
+
+php:
+    - "7.2"
+    - "7.3"
+    - "7.4"
+
+before_install:
+    - nvm install
+    - nvm use
+
+install:
+    - npm run install:dev
+
+script:
+    - npm run lint
+
+cache:
+    npm: true
+
+notifications:
+    email:
+        recipients:
+            - info@stephensabatini.com
