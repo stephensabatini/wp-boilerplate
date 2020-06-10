@@ -1,17 +1,27 @@
 {
 	"name": "WP-Boilerplate",
-	"author": "Stephen Sabatini <info@stephensabatini.com> (https://stephensabatini.com)",
 	"description": "A WordPress boilerplate theme.",
 	"version": "1.0.0",
+	"author": "Stephen Sabatini <info@stephensabatini.com> (https://stephensabatini.com)",
 	"license": "GPL-3.0-or-later",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stephensabatini/WP-Boilerplate.git"
+	},
 	"private": true,
+	"engineStrict": true,
+	"engines": {
+		"node": ">=12.18"
+	},
 	"main": "gulpfile.js",
 	"devDependencies": {
+		"@wordpress/eslint-plugin": "^6.1.0",
 		"del": "^5.1.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-concat": "^2.6.1",
+		"gulp-eslint": "^6.0.0",
 		"gulp-header": "^2.0.9",
 		"gulp-imagemin": "^7.1.0",
 		"gulp-load-plugins": "^2.0.3",
@@ -21,23 +31,36 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-sass": "^4.1.0",
 		"gulp-sass-glob": "^1.1.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-stylelint": "^13.0.0",
 		"gulp-svgo": "^2.2.1",
-		"gulp-uglify": "^3.0.2",
-		"imagemin": "^7.0.1",
-		"imagemin-jpegtran": "^7.0.0",
-		"imagemin-optipng": "^8.0.0",
-		"imagemin-svgo": "^8.0.0",
-		"node-sass": "^4.14.1"
+		"gulp-terser": "^1.2.0",
+		"node-sass": "^4.14.1",
+		"stylelint": "^13.6.0",
+		"stylelint-config-wordpress": "^17.0.0"
 	},
 	"dependencies": {
 		"normalize.css": "^8.0.1"
 	},
 	"scripts": {
-		"start": "gulp",
-		"build": "gulp compile"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/stephensabatini/wp-boilerplate.git"
+		"start": "NODE_ENV=production npm run install",
+		"watch": "NODE_ENV=development gulp watch",
+		"watch:css": "gulp watch:css",
+		"watch:js": "gulp watch:js",
+		"watch:images": "gulp watch:images",
+		"build": "gulp compile",
+		"build:css": "gulp compile:css",
+		"build:js": "gulp compile:js",
+		"build:images": "gulp compile:images",
+		"install": "npm run build && composer install --no-dev --optimize-autoloader",
+		"install:prod": "npm install && npm run build && composer install --no-dev --optimize-autoloader",
+		"install:dev": "NODE_ENV=development npm install && composer install && npm run build",
+		"lint": "npm run lint:css && npm run lint:js && npm run lint:php",
+		"lint:css": "gulp lint:css",
+		"lint:js": "gulp lint:js",
+		"lint:php": "composer run lint:php",
+		"format": "npm run format:js && npm run format:php",
+		"format:js": "eslint --fix dist/js",
+		"format:php": "composer run format:php"
 	}
 }
