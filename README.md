@@ -12,8 +12,7 @@
 
 ![Support Level](https://img.shields.io/badge/support-beta-blueviolet.svg)
 ![WordPress Theme: Tested WP Version](https://img.shields.io/badge/wordpress-v5.4.1%20tested-brightgreen)
-[ ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg) ](https://github.com/stephensabatini/WP-Boilerplate/blob/master/LICENSE.md)
-![GitHub stars](https://img.shields.io/github/stars/stephensabatini/WP-Boilerplate?style=social)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/stephensabatini/WP-Boilerplate/blob/master/LICENSE.md)
 
 
 ## Requirements
@@ -90,7 +89,7 @@ Although Formatters do a great job of automating a lot of the formatting they ar
 ### General
 
 `dist` - Where all of the assets are compiled and concatenated to.  
-`includes` - This contains purely backend things such as configuration, hooks, filters, classes, helper/utility functions, etc.  
+`includes` - This contains purely backend things such as configuration, hooks, filters, classes, utility functions, etc.  
 `includes/classes`  Any classes defined here are autoloaded using composer and are accessible across the theme.  
 `languages` - Where the language files are stored.  
 `node_modules` - This contains the Node.js dependencies.  
@@ -106,7 +105,7 @@ Although Formatters do a great job of automating a lot of the formatting they ar
 `src/scss/abstracts` - Where all global definitions for use across your SASS are defined.  
 `src/scss/vendors` - Where all third-party SCSS/CSS is imported from.  
 `src/scss/base` - Where all base styles such as HTML elements and style resets.  
-`src/scss/layout` - Where all layout/section components are such as the Header, Navigation, Sidebar, Footer, and Forms.  
+`src/scss/layout` - Where all layout components are such as the Header, Navigation, Sidebar, Footer, and Forms.  
 `src/scss/partials` - Mocks the structure of the `/partials` directory.  
 `src/scss/partials/blocks` -   Mocks the structure of the `partials/blocks` directory.  
 `src/scss/templates` -  Mocks the structure of the `templates` directory.
@@ -121,6 +120,4 @@ npm run install
 ```
 
 
-## Do you like what you see?
-
-[ ![Hire Me](https://storage.cloud.google.com/stephensabatini/stephen-sabatini-version-control-banner.jpg) ](https://stephensabatini.com)
+[![Do you like what you see? Hire me.](https://stephensabatini.s3.amazonaws.com/github/stephen-sabatini-version-control-banner.jpg)](https://stephensabatini.com/contact/)
