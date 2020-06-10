@@ -12,7 +12,7 @@
 
 ![Support Level](https://img.shields.io/badge/support-beta-blueviolet.svg)
 ![WordPress Theme: Tested WP Version](https://img.shields.io/badge/wordpress-v5.4.1%20tested-brightgreen)
-[ ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg) ](https://github.com/stephensabatini/WP-Boilerplate/blob/master/LICENSE.md)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/stephensabatini/WP-Boilerplate/blob/master/LICENSE.md)
 ![GitHub stars](https://img.shields.io/github/stars/stephensabatini/WP-Boilerplate?style=social)
 
 
@@ -123,4 +123,4 @@ npm run install
 
 ## Do you like what you see?
 
-[ ![Hire Me](https://storage.cloud.google.com/stephensabatini/stephen-sabatini-version-control-banner.jpg) ](https://stephensabatini.com)
+[![Hire Me](https://storage.cloud.google.com/stephensabatini/stephen-sabatini-version-control-banner.jpg)](https://stephensabatini.com)
