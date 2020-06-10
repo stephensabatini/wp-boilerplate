@@ -6,6 +6,7 @@
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
  * @license GPL, or GNU General Public License, version 2
+ * @license MIT
  */
 $text      = trim( strip_tags( get_the_content() ) );
 $count     = preg_match_all( '~\s+~', "$text ", $m );

@@ -6,7 +6,7 @@
  *
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package Boilerplate\Core
- * @license GPL, or GNU General Public License, version 2
+ * @license MIT
  */
 
 namespace Boilerplate\Core;

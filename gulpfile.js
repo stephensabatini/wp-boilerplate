@@ -7,6 +7,7 @@
  * @version 1.0.0
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @license https://opensource.org/licenses/gpl-license.php GNU Public License
+ * @license MIT
  */
 
 const gulp = require('gulp');

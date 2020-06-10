@@ -8,7 +8,7 @@
  * @link https://developer.wordpress.org/themes/template-files-section/post-template-files/
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
- * @license GPL, or GNU General Public License, version 2
+ * @license MIT
  */
 
 get_header();

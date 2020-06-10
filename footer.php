@@ -5,6 +5,7 @@
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
  * @license GPL, or GNU General Public License, version 2
+ * @license MIT
  */
 ?>
 			<footer id="footer" class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">

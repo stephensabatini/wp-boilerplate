@@ -6,6 +6,7 @@
  * @author Stephen Sabatini <info@stephensabatini.com>
  * @package WP-Boilerplate
  * @license GPL, or GNU General Public License, version 2
+ * @license MIT
  */
 ?>
 <main id="main-wrapper" class="site-main-wrapper" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
