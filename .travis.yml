@@ -11,9 +11,8 @@ php:
     - "7.4"
 
 before_install:
-    - echo "lts/*" > .nvmrc
-    - nvm install
-    - nvm use
+    - nvm install --lts
+    - nvm use --lts
 
 install:
     - npm run install:dev
