@@ -11,22 +11,27 @@
  */
 
 get_header();
+?>
+<div id="content" class="site-content">
+	<?php
+	if ( have_posts() ) {
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'template-parts/post/content', get_post_format() );
 
-if ( have_posts() ) {
-	while ( have_posts() ) {
-		the_post();
-		get_template_part( 'template-parts/post/content', get_post_format() );
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) {
-			comments_template();
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
 		}
+
+		posts_nav_link( ' — ', '« Previous Page', 'Next Page »' );
+	} else {
+		get_template_part( 'template-parts/post/content', 'none' );
 	}
 
-	posts_nav_link( ' — ', '« Previous Page', 'Next Page »' );
-} else {
-	get_template_part( 'template-parts/post/content', 'none' );
-}
-
-get_sidebar();
+	get_sidebar();
+	?>
+</div>
+<?php
 get_footer();

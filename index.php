@@ -21,16 +21,21 @@ if ( is_archive() ) {
 	the_archive_title( '<h1 class="archive-title">', '</h1>' );
 	echo '<p class="archive-description">' . term_description() . '</p>';
 }
-
-if ( have_posts() ) {
-	while ( have_posts() ) {
-		the_post();
-		get_template_part( 'template-parts/post/excerpt/content', get_post_format() );
+?>
+<div id="content" class="site-content">
+	<?php
+	if ( have_posts() ) {
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'template-parts/post/excerpt/content', get_post_format() );
+		}
+		the_posts_pagination();
+	} else {
+		get_template_part( 'template-parts/post/excerpt/content', 'none' );
 	}
-	the_posts_pagination();
-} else {
-	get_template_part( 'template-parts/post/excerpt/content', 'none' );
-}
 
-get_sidebar();
+	get_sidebar();
+	?>
+</div>
+<?php
 get_footer();
