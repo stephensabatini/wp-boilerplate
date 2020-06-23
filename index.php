@@ -18,20 +18,21 @@ if ( is_archive() ) {
 	the_archive_description( '<div class="archive-description">', '</div>' );
 }
 ?>
-<div id="content" class="site-content">
-	<?php
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-			the_post();
-			get_template_part( 'template-parts/post/excerpt/content', get_post_format() );
+<div id="site-content" class="site-content">
+	<main id="site-main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
+		<?php
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/post/excerpt/content', get_post_format() );
+			}
+			the_posts_pagination();
+		} else {
+			get_template_part( 'template-parts/post/excerpt/content', 'none' );
 		}
-		the_posts_pagination();
-	} else {
-		get_template_part( 'template-parts/post/excerpt/content', 'none' );
-	}
-
-	get_sidebar();
-	?>
-</div>
+		?>
+	</main><!-- #site-main -->
+	<?php get_sidebar(); ?>
+</div><!-- #site-content -->
 <?php
 get_footer();

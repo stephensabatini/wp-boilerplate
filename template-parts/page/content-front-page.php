@@ -9,16 +9,14 @@
  */
 
 ?>
-<main id="main-wrapper" class="site-main-wrapper" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-	<article class="site-main">
-		<?php
-		the_content(
-			sprintf(
-				/* translators: %s: Name of current post */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-boilerplate' ),
-				get_the_title()
-			)
-		);
-		?>
-	</article><!-- .site-main -->
-</main><!-- #main-wrapper -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	the_content(
+		sprintf(
+			/* translators: %s: Name of current post */
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-boilerplate' ),
+			get_the_title()
+		)
+	);
+	?>
+</article><!-- .post -->

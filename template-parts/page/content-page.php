@@ -9,16 +9,15 @@
  */
 
 ?>
-<main id="main-wrapper" class="site-main-wrapper" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'site-main' ); ?>>
-		<?php
-		the_content();
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'wp-boilerplate' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</article><!-- .site-main -->
-</main><!-- #main-wrapper -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	the_title( '<h1>', '</h1>' );
+	the_content();
+	wp_link_pages(
+		array(
+			'before' => '<div class="page-links">' . __( 'Pages:', 'wp-boilerplate' ),
+			'after'  => '</div>',
+		)
+	);
+	?>
+</article><!-- .post -->

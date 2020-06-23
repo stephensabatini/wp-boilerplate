@@ -12,26 +12,27 @@
 
 get_header();
 ?>
-<div id="content" class="site-content">
-	<?php
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-			the_post();
-			get_template_part( 'template-parts/post/content', get_post_format() );
+<div id="site-content" class="site-content">
+	<main id="site-main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
+		<?php
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/post/content', get_post_format() );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) {
+					comments_template();
+				}
 			}
+
+			posts_nav_link( ' — ', '« Previous Post', 'Next Post »' );
+		} else {
+			get_template_part( 'template-parts/post/content', 'none' );
 		}
-
-		posts_nav_link( ' — ', '« Previous Page', 'Next Page »' );
-	} else {
-		get_template_part( 'template-parts/post/content', 'none' );
-	}
-
-	get_sidebar();
-	?>
-</div>
+		?>
+	</main><!-- #site-main -->
+	<?php get_sidebar(); ?>
+</div><!-- #site-content -->
 <?php
 get_footer();
