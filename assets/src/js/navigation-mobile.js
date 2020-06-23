@@ -1,6 +1,6 @@
 'use strict';
 const navButton = document.getElementById( 'main-navigation-toggle' );
-navButton.addEventListener( 'click', function() {
+navButton.addEventListener( 'click', () => {
 	const nav = document.getElementsByTagName( 'body' )[ 0 ];
 	const openClass = 'main-navigation-open';
 	const ariaAttr = 'aria-expanded';
