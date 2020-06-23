@@ -30,7 +30,7 @@
 		"gulp-stylelint": "^13.0.0",
 		"gulp-terser": "^1.2.0",
 		"stylelint": "^13.6.0",
-		"stylelint-config-wordpress": "^17.0.0",
+		"stylelint-config-wordpress": "^17.0.0"
 	},
 	"dependencies": {
 		"normalize.css": "^8.0.1"
@@ -54,6 +54,6 @@
 		"lint:php": "composer run lint:php",
 		"format": "npm run format:js && npm run format:php",
 		"format:js": "eslint --fix dist/js",
-		"format:php": "composer run format:php",
+		"format:php": "composer run format:php"
 	}
 }
