@@ -5,25 +5,28 @@ dist: xenial
 
 language: php
 
+# Only support PHP versions according to https://www.php.net/supported-versions.php
 php:
-    - 7.2
-    - 7.3
-    - 7.4
-
-before_install:
-    - nvm install --lts
-    - nvm use --lts
+  - 7.2
+  - 7.3
+  - 7.4
 
 install:
-    - npm run install:dev
+  # Install and use latest LTS release of node.
+  - nvm install --lts
+  - nvm use --lts
+
+  # Run our dev install.
+  - npm run install:dev
 
 script:
-    - npm run lint
+  # Run linting which checks against all WPCS standards.
+  - npm run lint
 
 cache:
-    npm: true
+  npm: true
 
 notifications:
-    email:
-        recipients:
-            - info@stephensabatini.com
+  email:
+    recipients:
+      - info@stephensabatini.com
