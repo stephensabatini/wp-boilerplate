@@ -69,8 +69,17 @@ function setup() {
 	add_filter( 'site_icon_image_sizes', $n( 'add_site_icon_image_sizes' ) );
 	add_filter( 'site_icon_meta_tags', $n( 'add_site_icon_meta_tags' ) );
 
+	// Add js class to html element if it supports it.
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
+
+	// Add browserconfig until IE 11 EOL.
 	add_action( 'wp_head', $n( 'add_browserconfig' ), 10 );
+
+	/**
+	 * Change the title separator to a pipe character because you can fit the
+	 * most characters in a title with it for SEO.
+	 */
+	add_filter( 'document_title_separator', $n( 'edit_document_title_separator' ) );
 
 	/**
 	 * Filter the "read more" excerpt string link to the post.
@@ -149,24 +158,6 @@ function add_site_icon_meta_tags( $meta_tags ) {
 }
 
 /**
- * Defines a custom read more area for our excerpts.
- *
- * Replace the usual [...] with a trailing elipsis: …
- *
- * @param string $more The Read More area of the excerpt.
- */
-function edit_excerpt_more( $more ) {
-	if ( ! is_single() ) {
-		$more = sprintf(
-			'…',
-			get_permalink( get_the_ID() ),
-			__( 'Read More', 'wp-boilerplate' )
-		);
-	}
-	return $more;
-}
-
-/**
  * Handles JavaScript detection.
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
@@ -186,4 +177,32 @@ function js_detection() {
  */
 function add_browserconfig() {
 	echo '<meta name="msapplication-config" content="' . esc_url( BOILERPLATE_TEMPLATE_URL . '/browserconfig.xml' ) . '" />' . PHP_EOL;
+}
+
+/**
+ * Use the shortest width title separator to fit the most content in the title
+ * for SEO reasons.
+ *
+ * @return string
+ */
+function edit_document_title_separator() {
+	return '|';
+}
+
+/**
+ * Defines a custom read more area for our excerpts.
+ *
+ * Replace the usual [...] with a trailing elipsis: …
+ *
+ * @param string $more The Read More area of the excerpt.
+ */
+function edit_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = sprintf(
+			'…',
+			get_permalink( get_the_ID() ),
+			__( 'Read More', 'wp-boilerplate' )
+		);
+	}
+	return $more;
 }
