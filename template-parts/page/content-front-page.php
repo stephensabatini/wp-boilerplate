@@ -15,7 +15,7 @@
 		the_content(
 			sprintf(
 				/* translators: %s: Name of current post */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'stephensabatini' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-boilerplate' ),
 				get_the_title()
 			)
 		);
