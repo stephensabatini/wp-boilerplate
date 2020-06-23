@@ -8,19 +8,14 @@
  */
 
 ?>
-			<footer id="footer" class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
-				<div class="site-copyright">
-					&copy; <?php echo esc_html( date_i18n( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?>.
-					<?php
-					esc_html_e( 'All rights reserved.', 'wp-boilerplate' );
-
-					if ( function_exists( 'the_privacy_policy_link' ) ) {
-						the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-					}
-					?>
-				</div><!-- .site-copyright -->
-			</footer><!-- #footer -->
-		</div><!-- #wrapper -->
+			<footer id="site-footer" class="site-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+				&copy; <?php echo esc_html( date_i18n( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?>.
+				<?php
+				esc_html_e( 'All rights reserved.', 'wp-boilerplate' );
+				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
+				?>
+			</footer><!-- #site-footer -->
+		</div><!-- #site-wrapper -->
 		<?php wp_footer(); ?>
 	</body>
 </html>
