@@ -8,8 +8,6 @@
  * @license MIT
  */
 
-namespace Boilerplate\Utilities;
-
 use function Boilerplate\Utilities\get_the_read_time;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
