@@ -15,7 +15,7 @@ get_header();
 
 if ( is_archive() ) {
 	the_archive_title( '<h1 class="archive-title">', '</h1>' );
-	echo '<p class="archive-description">' . term_description() . '</p>';
+	the_archive_description( '<div class="archive-description">', '</div>' );
 }
 ?>
 <div id="content" class="site-content">
