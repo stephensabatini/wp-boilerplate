@@ -16,9 +16,6 @@ use function Boilerplate\Utilities\get_the_read_time;
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'site-main' ); ?> itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
 		<header class="entry-header">
 			<?php
-			if ( function_exists( 'yoast_breadcrumb' ) ) {
-				yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">', '</p>' );
-			}
 			the_title( '<h1 class="entry-title"><span>', '</span></h1>' );
 			?>
 			<div class="entry-meta">
