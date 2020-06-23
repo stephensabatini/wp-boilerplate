@@ -14,7 +14,7 @@ namespace Boilerplate\Utilities;
 /**
  * Gets the estimated read time.
  *
- * Based off the rated at which the average human reads at. Many research
+ * Based off the rate at which the average human reads at. Many research
  * studies indicate that number is between 200-250 WPM. However, some results
  * indicate as low as 150. This is how we settled with 200 WPM.
  *
