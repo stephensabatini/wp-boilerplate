@@ -24,11 +24,9 @@
 		<a class="skip-link screen-reader-text" href="#main-wrapper"><?php esc_html_e( 'Skip to Main Content', 'wp-boilerplate' ); ?></a>
 		<div id="site-wrapper" class="site-wrapper">
 			<header id="site-header" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
-				<h1 class="site-name">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<?php bloginfo( 'name' ); ?>
-					</a>
-				</h1>
+				<div class="site-name">
+					<?php the_custom_logo(); ?>
+				</div>
 				<div class="site-description">
 					<?php bloginfo( 'description' ); ?>
 				</div>
