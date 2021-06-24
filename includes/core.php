@@ -45,6 +45,13 @@ function i18n() {
 function theme_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'custom-line-height' );
+	add_theme_support( 'custom-units', 'rem' );
+	add_theme_support( 'custom-spacing' );
+	add_theme_support( 'editor-styles' );
+	add_theme_support( 'responsive-embeds' );
 
 	// Enable featured images.
 	add_theme_support( 'post-thumbnails' );
